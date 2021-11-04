@@ -10,11 +10,11 @@ router.post("/subscription", async (req, res) => {
             dateEnd : new Date(date.setMonth(date.getMonth()+req.body.period)),
             period : req.body.period,
         }
-        await user.save();
-        res.status(200).send("SUBSCRUCTION SUCCES");
+        user.save();
+        res.status(200).send("SUBSCRUCTION SUCCES").end();
         return;
     }
-    res.status(406).send("NO USER");
+    res.status(406).send("NO USER").end();
 })
 
 module.exports = router

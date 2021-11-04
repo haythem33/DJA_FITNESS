@@ -1,16 +1,21 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Courses } from 'src/app/models/Course';
+import { Observable } from 'rxjs';
+import { AuthServiceService } from 'src/app/auth/services/auth-service.service';
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'any'
 })
 export class UserService {
-  constructor(private http: HttpClient) {}
+  header: HttpHeaders = new HttpHeaders().set('content-type', 'application/json');
+  constructor(private auth : AuthServiceService,private http : HttpClient) { }
 
-  subscribe(email: string, period: number) {
-    return this.http.post(
-      'http://localhost:3000/user/subscription',
-      JSON.stringify({ email: email, period: period })
-    );
+
+  subscribe(period : number) {
+    const body = JSON.stringify({email : this.auth.decodeToken().data,period : period})
+    return this.http.post("http://localhost:3000/user/subscription",body, {
+      headers : this.header,
+      responseType : 'text'
+    });
   }
 }

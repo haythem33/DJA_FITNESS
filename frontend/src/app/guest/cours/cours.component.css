@@ -1,10 +1,4 @@
-/*begin-commonstyles library*//*!
- * froala_editor v3.2.3 (https://www.froala.com/wysiwyg-editor)
- * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2020 Froala Labs
- */
-
- .fr-clearfix::after {
+.fr-clearfix::after {
   clear: both;
   display: block;
   content: "";
@@ -34911,7 +34905,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-section-1 .u-image-1 {
   min-height: 669px;
-  background-image: url("images/frere.jpg");
+  /* background-image: url("../images/frere.jpg"); */
   background-position: 50% 50%;
 }
 
@@ -35096,7 +35090,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-section-2 .u-image-1 {
   min-height: 413px;
-  background-image: url("images/portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg");
+  /* background-image: url("images/portrait-young-afro-american-sports-man-looks-away_171337-8255.jpg"); */
   background-position: 50% 50%;
 }
 
@@ -35106,7 +35100,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-section-2 .u-image-2 {
   min-height: 413px;
-  background-image: url("images/athletic-boxer-punching-with-determination-precaution_158595-4826.jpg");
+  /* background-image: url("images/athletic-boxer-punching-with-determination-precaution_158595-4826.jpg"); */
   background-position: 50% 50%;
 }
 
@@ -35116,7 +35110,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-section-2 .u-image-3 {
   min-height: 413px;
-  background-image: url("images/muscular-guy-with-dumbbell_144627-27153.jpg");
+  /* background-image: url("images/muscular-guy-with-dumbbell_144627-27153.jpg"); */
   background-position: 50% 50%;
 }
 
@@ -35299,7 +35293,7 @@ a.u-link.u-text-hover-grey-90:hover {
     min-height: 401px;
   }
 } .u-section-3 {
-  background-image: url("images/dsa-min.jpg");
+  /* background-image: url("images/dsa-min.jpg"); */
   background-position: 50% 50%;
 }
 

@@ -2,23 +2,33 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { SubscribeComponent } from '../user/subscribe/subscribe.component';
 import { CoursComponent } from './cours/cours.component';
 import { AboutComponent } from './about/about.component';
+import { GuestRoutingModule } from './guest-routing.module';
+import { AuthModule } from '../auth/auth.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserModule } from '../user/user.module';
+import { GuestService } from './services/guest.service';
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    SubscribeComponent,
     CoursComponent,
     AboutComponent,
-
+    NavbarComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule
-  ]
+    GuestRoutingModule,
+    HttpClientModule,
+    AuthModule,
+    MatDialogModule,
+    UserModule,
+  ],
+  providers : [GuestService]
 })
 export class GuestModule { }

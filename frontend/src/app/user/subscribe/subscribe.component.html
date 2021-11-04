@@ -1,1 +1,14 @@
+<form #period="ngForm">
+  <label class="form-label">PERIOD :</label>
+  <select name="per" (change)="changeAmount(period)" class="form-control" ngModel required>
+    <option [value]="1">1 MONTH</option>
+    <option [value]="2">2 MONTH</option>
+    <option [value]="3">3 MONTH</option>
+    <option [value]="6">6 MONTH</option>
+    <option [value]="9">9 MONTH</option>
+  </select>
+  <label class="form-label">AMOUNT :</label>
+  <input type="number" [value]="amount" disabled="true" class="form-control" placeholder="AMOUNT"/>
+  <button class="btn btn-primary" [disabled]="period.invalid" (click)="submit(period)">Submit</button>
+</form>
 

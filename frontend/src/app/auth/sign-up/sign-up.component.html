@@ -1,30 +1,35 @@
-<div class="row">
-  <div class="col-md-6 offset-md-3 mt-4">
-      <h3>REGISTER HERE </h3>
-      <form>
-          <div class="form-group">
-              <label for="registerUsername">Username</label>
-              <input type="text"
-                     class="form-control"
-                     id="registerUsername"
-                     placeholder="Enter username">
-          </div>
-          <div class="form-group">
-              <label for="registerEmail">Email</label>
-              <input type="email"
-                     class="form-control"
-                     id="registerEmail"
-                     placeholder="Enter email">
-          </div>
-          <div class="form-group">
-              <label for="registerPassword">Password</label>
-              <input type="password"
-                     class="form-control"
-                     id="registerPassword"
-                     placeholder="Password">
-          </div>
-          <button type="submit" style="margin-top: 10px;"
-                  class="btn btn-primary">Register <i class="fas fa-sign-in-alt"></i></button>
-      </form>
+<form class="form-control">
+  <div class="mb-3">
+    <input
+      class="form-control"
+      name="email"
+      type="text"
+      placeholder="Enter your username"
+      ngModel
+      required
+    />
   </div>
-</div>
+  <div class="mb-3">
+    <input
+      class="form-control"
+      name="email"
+      type="text"
+      placeholder="Enter your email"
+      ngModel
+      required
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      name="password"
+      type="password"
+      class="form-control"
+      placeholder="Enter your password"
+      ngModel
+      required
+    />
+  </div>
+  <button type="submit" style="margin-top: 10px" class="btn btn-primary">
+    Register <i class="fas fa-sign-in-alt"></i>
+  </button>
+</form>
