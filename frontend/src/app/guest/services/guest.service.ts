@@ -14,8 +14,8 @@ export class GuestService {
   event : EventEmitter<string> = new EventEmitter();
   constructor(private http : HttpClient,private dialog: MatDialog,private auth : AuthServiceService) { }
 
-  getAllCourses() : Observable<Courses> {
-    return this.http.get<Courses>("http://localhost:3000/user/getCourses");
+  getAllCourses() : Observable<Array<Courses>> {
+    return this.http.get<Array<Courses>>("http://localhost:3000/user/getCourses");
   }
   joinCourse(id:string,email:string) {
     return this.http.post(`http://localhost:3000/user/${id}/${email}`,{});
@@ -36,6 +36,6 @@ export class GuestService {
     this.dialog.closeAll();
   }
   closeSubscribe() {
-
+    this.dialog.closeAll();
   }
 }

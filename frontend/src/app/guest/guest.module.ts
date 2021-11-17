@@ -9,9 +9,8 @@ import { AuthModule } from '../auth/auth.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserModule } from '../user/user.module';
 import { GuestService } from './services/guest.service';
-import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -28,6 +27,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AuthModule,
     MatDialogModule,
     UserModule,
+    FontAwesomeModule
   ],
   providers : [GuestService]
 })

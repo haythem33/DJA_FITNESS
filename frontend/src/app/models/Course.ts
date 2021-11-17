@@ -7,5 +7,4 @@ export class Courses {
   dateEnd!:Date;
   nbLimite!:number;
   users!:Array<User>
-
 }
