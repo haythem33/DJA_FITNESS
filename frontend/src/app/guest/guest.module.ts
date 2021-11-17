@@ -10,7 +10,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UserModule } from '../user/user.module';
 import { GuestService } from './services/guest.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -27,7 +26,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AuthModule,
     MatDialogModule,
     UserModule,
-    FontAwesomeModule
   ],
   providers : [GuestService]
 })
