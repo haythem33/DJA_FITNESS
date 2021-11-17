@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
-import { GuestService } from 'src/app/guest/services/guest.service';
 import { User } from 'src/app/models/User';
 import { AuthServiceService } from '../services/auth-service.service';
 
@@ -13,21 +13,22 @@ import { AuthServiceService } from '../services/auth-service.service';
 })
 export class LoginComponent implements OnInit,OnDestroy {
   loginSub!: Subscription;
-  constructor(private auth : AuthServiceService,private guestService : GuestService) { }
+  constructor(private auth : AuthServiceService,public dialogRef: MatDialogRef<LoginComponent>) { }
 
   ngOnInit(): void {
   }
   ngOnDestroy(): void {
-    this.loginSub.unsubscribe();
+    this.loginSub?.unsubscribe();
   }
-   submit(user:NgForm) {
+  submit(user:NgForm) {
     const _user = new User();
     _user.email = user.value.email;
     _user.password = user.value.password;
     this.loginSub = this.auth.login(_user).subscribe((res : any) => {
         this.auth.saveToken(res.token);
-        this.guestService.closeAuth();
+        this.dialogRef.close({state : true});
     },(err) => {
+      this.dialogRef.close({state : false});
       alert('BAD INFORMATION')
     })
   }

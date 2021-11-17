@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { GuestService } from 'src/app/guest/services/guest.service';
+import { MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,17 +10,16 @@ import { UserService } from '../services/user.service';
 })
 export class SubscribeComponent implements OnInit {
   amount!:number
-  constructor(private userService : UserService,private geustService : GuestService) { }
+  constructor(private userService : UserService,public dialogRef: MatDialogRef<SubscribeComponent>) { }
 
   ngOnInit(): void {
   }
   submit(period:NgForm) : void {
     this.userService.subscribe(period.value.per).subscribe((res) => {
-      alert(res);
-      this.geustService.closeSubscribe()
+      this.dialogRef.close({state : true});
     },(err) => {
-      console.log(err)
       alert('ERROR SERVER');
+      this.dialogRef.close({state : false});
     })
   }
   changeAmount(period:NgForm): void {

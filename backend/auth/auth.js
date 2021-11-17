@@ -6,7 +6,7 @@ router.post("/login",async (req, res) => {
     
     const user = await userModel.findOne({email : req.body.email,password : req.body.password})
     if(user) {
-        res.status(200).send({message : "user ok",token : token.sign({data : user.email},'secret')}).end();
+        res.status(200).send({message : "user ok",token : token.sign({user},'secret')}).end();
         return;
     }
     res.status(406).send("bad information").end();

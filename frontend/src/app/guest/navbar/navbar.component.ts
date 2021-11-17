@@ -10,12 +10,5 @@ export class NavbarComponent implements OnInit {
   constructor(private guestService : GuestService) { }
 
   ngOnInit(): void {
-
-  }
-  openAuth() : void {
-    this.guestService.openAuth();
-  }
-  openSub() : void {
-    this.guestService.openSubscribe();
   }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth.component';
 import { MatTabsModule}  from '@angular/material/tabs';
@@ -11,7 +10,6 @@ import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     LoginComponent,
-    SignUpComponent,
     AuthComponent
   ],
   imports: [
