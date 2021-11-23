@@ -10,14 +10,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UserModule } from '../user/user.module';
 import { GuestService } from './services/guest.service';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AuthComponent } from '../auth/auth.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     CoursComponent,
-    AboutComponent,
-    NavbarComponent
+    AboutComponent
+    ,NavbarComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +27,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AuthModule,
     MatDialogModule,
     UserModule,
+
   ],
   providers : [GuestService]
 })

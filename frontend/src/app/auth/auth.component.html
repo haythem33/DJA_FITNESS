@@ -1,2 +1,9 @@
-<button *ngIf="!authState" class="btn btn-light" (click)="openAuthModal()">AUTHENTICATION</button>
-<p class="btn btn-light" *ngIf="authState">{{ userName }}</p>
+
+  <button   *ngIf="!authState" mat-button class="btn btn-light" (click)="openAuthModal()">AUTHENTICATION</button>
+  <button [matMenuTriggerFor]="menu" class="btn btn-dark" *ngIf="authState">ICON</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>{{userName}}</button>
+    <app-user></app-user>
+    <button class="btn btn-light" (click)="logOut()">LOG OUT</button>
+  </mat-menu>
+

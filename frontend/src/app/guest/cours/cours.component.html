@@ -1,4 +1,6 @@
+
 <app-navbar></app-navbar>
+
 <!-- Header-->
 <header
   class="bg-dark py-5"
@@ -23,7 +25,8 @@
         justify-content-center
       "
     >
-      <div class="col mb-5">
+      <div class="col mb-5" *ngFor="let cours of allCourses ">
+
         <div class="card h-100">
           <!-- Product image-->
           <img
@@ -35,7 +38,8 @@
           <div class="card-body p-4">
             <div class="text-center">
               <!-- Product name-->
-              <h5 class="fw-bolder">{{allCourses[0].courseName}}</h5>
+              <h5 class="fw-bolder">{{cours.courseName}}</h5>
+              <h6 class="fw-bolder">{{cours.coach}}</h6>
               <!-- Product price-->
               59dt (mois)
             </div>
@@ -48,258 +52,11 @@
           </div>
         </div>
       </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-          <div
-            class="badge bg-dark text-white position-absolute"
-            style="top: 0.5rem; right: 0.5rem"
-          >
-            Sale
-          </div>
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://static1.terrafemina.com/articles/6/32/14/26/@/448616-cardio-ou-muscu-que-faut-il-choisir-953x0-3.jpg"
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">CARDIO TRAINING</h5>
-              <!-- Product reviews-->
-              <div
-                class="d-flex justify-content-center small text-warning mb-2"
-              >
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-              </div>
-              <!-- Product price-->
-              <span class="text-muted text-decoration-line-through">60dt</span>
-              45dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-          <div
-            class="badge bg-dark text-white position-absolute"
-            style="top: 0.5rem; right: 0.5rem"
-          >
-            Sale
-          </div>
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://img.dtcn.com/image/themanual/bowflex-c-6-feature-800x800.jpg"
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">BIKING</h5>
-              <!-- Product price-->
-              <span class="text-muted text-decoration-line-through">30dt</span>
-              25dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://media.istockphoto.com/photos/dedicated-strong-brunette-with-ponytail-in-sportswear-bare-foot-and-picture-id1126503889?k=20&m=1126503889&s=612x612&w=0&h=eKgWtq2reQDarIBjDNmfE-bSRlmxxQZghvwNUDNALeE="
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">KICK BOXING</h5>
-              <!-- Product reviews-->
-              <div
-                class="d-flex justify-content-center small text-warning mb-2"
-              >
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-              </div>
-              <!-- Product price-->
-              60dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <div
-            class="badge bg-dark text-white position-absolute"
-            style="top: 0.5rem; right: 0.5rem"
-          >
-            Sale
-          </div>
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://www.salsadanse.com/wp-content/uploads/2020/07/cours-de-zumba-latin-training-paris-4.jpg"
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">ZUMBA</h5>
-              <!-- Product price-->
-              <span class="text-muted text-decoration-line-through">60dt</span>
-              50dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://www.s-combats.com/wp-content/uploads/2017/08/s-combat-krav-maga.jpg"
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">KRAV MAGA</h5>
-              <!-- Product price-->
-              70dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Sale badge-->
-          <!--<div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>-->
-          <div
-            class="badge bg-dark text-white position-absolute"
-            style="top: 0.5rem; right: 0.5rem"
-          >
-            Sale
-          </div>
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://www.espace-musculation.com/uploads/2016/11/crossfit.jpg"
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">CROSS FIT</h5>
-              <!-- Product reviews-->
-              <div
-                class="d-flex justify-content-center small text-warning mb-2"
-              >
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-              </div>
-              <!-- Product price-->
-              <span class="text-muted text-decoration-line-through">70dt</span>
-              50dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <!-- Product image-->
-          <img
-            class="card-img-top"
-            src="https://www.fitnessfriandises.fr/wp-content/uploads/2015/09/comment-donner-des-cours-collectifs.jpg"
-            alt="..."
-          />
-          <!-- Product details-->
-          <div class="card-body p-4">
-            <div class="text-center">
-              <!-- Product name-->
-              <h5 class="fw-bolder">GYMNASTIQUE</h5>
-              <!-- Product reviews-->
-              <div
-                class="d-flex justify-content-center small text-warning mb-2"
-              >
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-              </div>
-              <!-- Product price-->
-              55dt-(mois)
-            </div>
-          </div>
-          <!-- Product actions-->
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
-            </div>
-          </div>
-        </div>
+
+
       </div>
     </div>
-  </div>
+
 </section>
 <!-- Footer-->
 <footer class="py-5 bg-dark">

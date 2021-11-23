@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { AuthServiceService } from 'src/app/auth/services/auth-service.service';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class UserService {
 
 
   subscribe(period : number) {
-    const body = JSON.stringify({email : this.auth.decodeToken().data,period : period})
+    const body = JSON.stringify({email : this.auth.decodeToken().user.email,period : period})
     return this.http.post("http://localhost:3000/user/subscription",body, {
       headers : this.header,
       responseType : 'text'

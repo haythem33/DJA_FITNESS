@@ -7,6 +7,8 @@ import { MatTabsModule}  from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
 import { AuthServiceService } from './services/auth-service.service';
 import { CookieService } from 'ngx-cookie-service';
+import {MatMenuModule} from '@angular/material/menu';
+import { UserModule } from '../user/user.module';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -16,7 +18,9 @@ import { CookieService } from 'ngx-cookie-service';
     CommonModule,
     HttpClientModule,
     MatTabsModule,
-    FormsModule
+    FormsModule,
+    MatMenuModule,
+    UserModule
   ],
   exports :[
     AuthComponent,

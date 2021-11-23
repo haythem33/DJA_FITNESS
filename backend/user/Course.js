@@ -5,6 +5,7 @@ const router = require("express").Router();
 router.post('/addCourse',async (req, res) => {
     const courses = new courseModel({
         coach : req.body.coach,
+        price : req.body.price,
         courseName : req.body.courseName,
         dateBegin : req.body.dateBegin,
         dateEnd : req.body.dateEnd,

@@ -8,11 +8,12 @@ import { GuestService } from '../services/guest.service';
   styleUrls: ['./cours.component.css']
 })
 export class CoursComponent implements OnInit {
-  allCourses!:Array<Courses>;
+  allCourses:Array<Courses>=[];
   constructor(private guestService : GuestService) { }
 
   ngOnInit(): void {
     this.getAllCourses();
+
   }
   getAllCourses() {
     this.guestService.getAllCourses().subscribe((courses:Array<Courses>) => {

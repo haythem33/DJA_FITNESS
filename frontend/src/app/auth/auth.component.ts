@@ -32,4 +32,8 @@ export class AuthComponent implements OnInit {
   getUserDecode() {
     this.userName = this.authService.decodeToken().user.username;
   }
+  logOut() {
+    this.authService.deleteToken();
+    this.authState = false;
+  }
 }

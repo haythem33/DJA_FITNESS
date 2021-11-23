@@ -33,4 +33,17 @@ export class LoginComponent implements OnInit,OnDestroy {
     })
   }
 
+  register(userReg:NgForm){
+    const _user = new User();
+    _user.email = userReg.value.email;
+    _user.password = userReg.value.password;
+    _user.username= userReg.value.username;
+    this.auth.register(_user).subscribe(res =>{
+      console.log(_user + "tneek w tahcheelou ")
+    } , err =>{
+      console.log(err)
+    })
+  }
+
+
 }

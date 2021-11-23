@@ -25,4 +25,12 @@ export class AuthServiceService {
     const token = this.cookie.get('token');
     return jwt_decode(token);
   }
+  deleteToken() : void {
+      this.cookie.deleteAll();
+  }
+  register(user:User){
+    return this.http.post("http://localhost:3000/auth/register" , user,{
+      headers:this.header
+    })
+  }
 }
