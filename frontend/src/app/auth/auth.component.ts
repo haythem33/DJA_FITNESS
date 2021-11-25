@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, OnInit,Output,EventEmitter } from "@angular/core";
+import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from "./login/login.component";
 import { AuthServiceService } from "./services/auth-service.service";
 @Component({
@@ -10,6 +10,7 @@ import { AuthServiceService } from "./services/auth-service.service";
 export class AuthComponent implements OnInit {
   authState = false;
   userName!: string;
+  @Output() authStateEmitter = new EventEmitter<boolean>();
   constructor(private dialog: MatDialog, private authService: AuthServiceService) { }
   ngOnInit(): void {
     if (this.authService.verifyToken()) {
@@ -26,6 +27,7 @@ export class AuthComponent implements OnInit {
       if (result?.state) {
         this.authState = result?.state;
         this.getUserDecode();
+        this.authStateEmitter.emit(this.authState);
       }
     })
   }

@@ -1,0 +1,12 @@
+<div class="row">
+  <h3 style="margin-top:8px" class="col-md-4 fw-bolder">RATING : </h3>
+  <button class="col-md-8 mx-auto" mat-icon-button *ngFor="let s of stars">
+    <mat-icon color="primary">{{s}}</mat-icon>
+  </button>
+</div>
+<div class="row">
+  <h3 style="margin-top:8px" class="col-md-4 fw-bolder">YOUR RATING : </h3>
+  <button (click)="evalutateCourse(i + 1)" class="col-md-8 mx-auto" mat-icon-button *ngFor="let s of userStarts;let i = index">
+    <mat-icon color="primary">{{s}}</mat-icon>
+  </button>
+</div>

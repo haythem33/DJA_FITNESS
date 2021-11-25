@@ -1,6 +1,4 @@
-
 <app-navbar></app-navbar>
-
 <!-- Header-->
 <header
   class="bg-dark py-5"
@@ -17,46 +15,60 @@
 <!-- Section-->
 <section class="py-5">
   <div class="container px-4 px-lg-5 mt-5">
-    <div
-      class="
-        row
-        gx-4 gx-lg-5
-        row-cols-2 row-cols-md-3 row-cols-xl-4
-        justify-content-center
-      "
-    >
-      <div class="col mb-5" *ngFor="let cours of allCourses ">
-
+    <div class="row">
+      <div class="col-sm-6 my-2" *ngFor="let cour of allCourses">
         <div class="card h-100">
-          <!-- Product image-->
           <img
             class="card-img-top"
             src="https://img-3.journaldesfemmes.fr/btJwba2YXyTPsrRP4QPwa05HMfg=/1500x/smart/921d8203c7d442b686f2d8c0b9c4b85f/ccmcms-jdf/28196944.jpg"
             alt="..."
           />
-          <!-- Product details-->
           <div class="card-body p-4">
-            <div class="text-center">
+            <div class="row">
               <!-- Product name-->
-              <h5 class="fw-bolder">{{cours.courseName}}</h5>
-              <h6 class="fw-bolder">{{cours.coach}}</h6>
+              <h3 class="col-md-6 fw-bolder">course name :</h3>
+              <h3 class="col-md-6">{{ cour.courseName }}</h3>
+              <h3 class="col-md-6 fw-bolder">coach name :</h3>
+              <h3 class="col-md-6">{{ cour.coach }}</h3>
               <!-- Product price-->
-              59dt (mois)
+              <h3 class="col-md-6 fw-bolder">course price :</h3>
+              <h3 class="col-md-6">{{ cour.price }}dt</h3>
+              <!-- <app-rating *ngIf="authState && checkUserCourse(cour.users) && checkTime(cour)"></app-rating> -->
+              <app-rating [cour]="cour"></app-rating>
             </div>
           </div>
           <!-- Product actions-->
           <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
             <div class="text-center">
-              <a class="btn btn-outline-dark mt-auto" href="#">Participate</a>
+              <app-auth
+                (authStateEmitter)="watchAuthState($event)"
+                *ngIf="!authState && !checkTime(cour)"
+              ></app-auth>
+              <button *ngIf="checkTime(cour)" class="btn btn-primary" disabled>
+                FINISHED
+              </button>
+              <button
+                *ngIf="
+                  authState && !checkUserCourse(cour.users) && !checkTime(cour)
+                "
+                class="btn btn-outline-dark mt-auto"
+                (click)="registerToCourse(cour._id)"
+              >
+                Participate
+              </button>
+              <button
+                *ngIf="authState && checkUserCourse(cour.users)"
+                class="btn btn-success mt-auto"
+                disabled
+              >
+                JOINED
+              </button>
             </div>
           </div>
         </div>
       </div>
-
-
-      </div>
     </div>
-
+  </div>
 </section>
 <!-- Footer-->
 <footer class="py-5 bg-dark">

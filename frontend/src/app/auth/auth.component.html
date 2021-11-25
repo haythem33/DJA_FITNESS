@@ -1,5 +1,4 @@
-
-  <button   *ngIf="!authState" mat-button class="btn btn-light" (click)="openAuthModal()">AUTHENTICATION</button>
+  <button *ngIf="!authState" mat-button class="btn btn-light" (click)="openAuthModal()">AUTHENTICATION</button>
   <button [matMenuTriggerFor]="menu" class="btn btn-dark" *ngIf="authState">ICON</button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>{{userName}}</button>

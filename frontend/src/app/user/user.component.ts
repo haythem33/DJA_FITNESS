@@ -12,6 +12,9 @@ export class UserComponent implements OnInit {
   constructor(private dialog: MatDialog,private authService : AuthServiceService) {}
 
   ngOnInit(): void {
+    if(!this.authService.verifyToken()) {
+      return;
+    }
     if(this.authService.decodeToken().user.subscription) {
       this.stateSub = true;
     }

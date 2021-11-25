@@ -10,15 +10,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { UserModule } from '../user/user.module';
 import { GuestService } from './services/guest.service';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AuthComponent } from '../auth/auth.component';
+import { RatingComponent } from './rating/rating.component';
+import { MatIconModule } from '@angular/material/icon'
+import {MatButtonModule} from "@angular/material/button";
+
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     CoursComponent,
-    AboutComponent
-    ,NavbarComponent
+    AboutComponent,NavbarComponent,
+    RatingComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { AuthComponent } from '../auth/auth.component';
     AuthModule,
     MatDialogModule,
     UserModule,
-
+    MatIconModule,
+    MatButtonModule
   ],
   providers : [GuestService]
 })

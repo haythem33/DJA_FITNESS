@@ -32,14 +32,13 @@ export class LoginComponent implements OnInit,OnDestroy {
       alert('BAD INFORMATION')
     })
   }
-
   register(userReg:NgForm){
     const _user = new User();
     _user.email = userReg.value.email;
     _user.password = userReg.value.password;
     _user.username= userReg.value.username;
     this.auth.register(_user).subscribe(res =>{
-      console.log(_user + "tneek w tahcheelou ")
+      console.log(res);
     } , err =>{
       console.log(err)
     })
