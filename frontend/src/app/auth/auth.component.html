@@ -1,5 +1,6 @@
-  <button *ngIf="!authState" mat-button class="btn btn-light" (click)="openAuthModal()">AUTHENTICATION</button>
-  <button [matMenuTriggerFor]="menu" class="btn btn-dark" *ngIf="authState">ICON</button>
+
+  <button   *ngIf="!authState" mat-button class="btn btn-dark" (click)="openAuthModal()">AUTHENTIFICATION</button>
+  <button [matMenuTriggerFor]="menu" class="btn btn-dark" *ngIf="authState"><img src="assets/img/profil.png" alt="" height="30px" width="40px"></button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>{{userName}}</button>
     <app-user></app-user>

@@ -4,9 +4,9 @@
     <mat-icon color="primary">{{s}}</mat-icon>
   </button>
 </div>
-<div class="row">
+<div class="row" *ngIf="UserRating">
   <h3 style="margin-top:8px" class="col-md-4 fw-bolder">YOUR RATING : </h3>
-  <button (click)="evalutateCourse(i + 1)" class="col-md-8 mx-auto" mat-icon-button *ngFor="let s of userStarts;let i = index">
+  <button (click)="evalutateCourse(i + 2)" class="col-md-8 mx-auto" mat-icon-button *ngFor="let s of userStarts;let i = index">
     <mat-icon color="primary">{{s}}</mat-icon>
   </button>
 </div>

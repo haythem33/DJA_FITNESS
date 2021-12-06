@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RatingComponent } from './rating/rating.component';
 import { MatIconModule } from '@angular/material/icon'
 import {MatButtonModule} from "@angular/material/button";
+import { ShopComponent } from './shop/shop.component';
 
 
 
@@ -22,6 +23,7 @@ import {MatButtonModule} from "@angular/material/button";
     CoursComponent,
     AboutComponent,NavbarComponent,
     RatingComponent,
+    ShopComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,7 @@ import {MatButtonModule} from "@angular/material/button";
     MatDialogModule,
     UserModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers : [GuestService]
 })

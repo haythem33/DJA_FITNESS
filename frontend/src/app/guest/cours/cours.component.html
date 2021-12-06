@@ -33,8 +33,7 @@
               <!-- Product price-->
               <h3 class="col-md-6 fw-bolder">course price :</h3>
               <h3 class="col-md-6">{{ cour.price }}dt</h3>
-              <!-- <app-rating *ngIf="authState && checkUserCourse(cour.users) && checkTime(cour)"></app-rating> -->
-              <app-rating [cour]="cour"></app-rating>
+              <app-rating [cour]="cour" *ngIf="authState && checkUserCourse(cour.users) && checkTime(cour)"></app-rating>
             </div>
           </div>
           <!-- Product actions-->
