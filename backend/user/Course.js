@@ -2,14 +2,7 @@ const courseModel = require("../models/CourseModel");
 const router = require("express").Router();
 
 router.post("/addCourse", async (req, res) => {
-  const courses = new courseModel({
-    coach: req.body.coach,
-    price: req.body.price,
-    courseName: req.body.courseName,
-    dateBegin: req.body.dateBegin,
-    dateEnd: req.body.dateEnd,
-    nbLimite: req.body.nbLimite,
-  });
+  const courses = new courseModel(req.body);
   await courses.save();
   res.status(200).send("courses added");
 });
@@ -70,5 +63,20 @@ router.get("/getUserCourseRating/:id/:idUser",async (req, res) => {
   }
   let rating = course.users.find(u => u.userId.equals(req.params.idUser));
   res.status(200).end(JSON.stringify(rating));
+});
+router.put('/updateCourse/:id',async (req, res) => {
+   await courseModel.findOneAndUpdate({id : req.params.id},req.body).catch(() => {
+     res.status(500);
+     return;
+   });
+   res.status(200).end();
+});
+router.delete("/deleteCourse/:id",async (req, res) => {
+  await courseModel.findOneAndDelete({id : req.params.id}).catch(() => {
+    res.status(500);
+    return;
+  });
+  res.status(200).end();
 })
+
 module.exports = router;

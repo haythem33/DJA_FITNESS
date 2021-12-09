@@ -1,0 +1,166 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-12">
+    <div class="card">
+      <h2 class="text-center mb-4" mat-dialog-title>
+        {{ state | uppercase }} {{ title | uppercase }}
+      </h2>
+      <form *ngIf="title === 'COURSE'" class="form-card">
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >COACH NAME<span class="text-danger"> *</span></label
+            >
+            <input
+              type="text"
+              name="coach"
+              placeholder="Enter COACH NAME"
+              [(ngModel)]="data.coach"
+              required
+            />
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >COURSE NAME<span class="text-danger"> *</span></label
+            >
+            <input
+              type="text"
+              id="lname"
+              name="courseName"
+              placeholder="Course name"
+              [(ngModel)]="data.courseName"
+              required
+            />
+          </div>
+        </div>
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >PRICE<span class="text-danger"> *</span></label
+            >
+            <input
+              type="number"
+              name="price"
+              placeholder=""
+              [(ngModel)]="data.price"
+              required
+            />
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >LIMIT NUMBER<span class="text-danger"> *</span></label
+            >
+            <input
+              type="number"
+              id="mob"
+              name="nbLimite"
+              placeholder=""
+              [(ngModel)]="data.nbLimite"
+              required
+            />
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >DATE BEGIN<span class="text-danger"> *</span></label
+            >
+            <input
+            type="date"
+            name="dateBegin"
+            placeholder="date begin"
+            [(ngModel)]="data.dateBegin"
+            required
+          />
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >DATE END<span class="text-danger"> *</span></label
+            >
+          <input
+            type="date"
+            name="dateEnd"
+            [(ngModel)]="data.dateEnd"
+            required
+          />
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            *ngIf="state === 'UPDATE'"
+            (click)="update()"
+            type="submit"
+            class="btn-block btn-primary"
+          >
+            update
+          </button>
+          <button
+            *ngIf="state === 'ADD'"
+            (click)="add()"
+            type="submit"
+            class="btn-block btn-primary"
+          >
+            add
+          </button>
+        </div>
+      </form>
+      <form *ngIf="title === 'PRODUCT'" class="form-card">
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >PRODUCT NAME<span class="text-danger"> *</span></label
+            >
+            <input
+              type="text"
+              name="productName"
+              placeholder="Enter PRODUCT NAME"
+              [(ngModel)]="data.productName"
+              required
+            />
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >QUANTITY<span class="text-danger"> *</span></label
+            >
+            <input
+              type="number"
+              id="lname"
+              name="quantity"
+              placeholder="quantity"
+              [(ngModel)]="data.quantity"
+              required
+            />
+          </div>
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3"
+              >PRICE<span class="text-danger"> *</span></label
+            >
+            <input
+              type="number"
+              id="lname"
+              name="price"
+              placeholder="price"
+              [(ngModel)]="data.price"
+              required
+            />
+          </div>
+        </div>
+        <div class="text-center">
+          <button
+            *ngIf="state === 'UPDATE'"
+            (click)="update()"
+            type="submit"
+            class="btn-block btn-primary"
+          >
+            update
+          </button>
+          <button
+            *ngIf="state === 'ADD'"
+            (click)="add()"
+            type="submit"
+            class="btn-block btn-primary"
+          >
+            add
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

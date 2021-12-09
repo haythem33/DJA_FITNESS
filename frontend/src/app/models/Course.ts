@@ -9,6 +9,15 @@ export class Courses {
   nbLimite!:number;
   price!:number;
   users!:Array<userRating>
+  static fromObject(course : any) : Courses {
+    let c = new Courses();
+    c._id = course._id;
+    c.coach = course.coach;
+    c.courseName = course.courseName;
+    c.price = course.price;
+    c.nbLimite = course.nbLimite;
+    return c;
+  }
 }
 export class userRating {
    userId!:User;

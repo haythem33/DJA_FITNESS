@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Courses, userRating } from 'src/app/models/Course';
 import { Observable } from 'rxjs';
-import { AuthComponent } from 'src/app/auth/auth.component';
 import { AuthServiceService } from 'src/app/auth/services/auth-service.service';
-import { SubscribeComponent } from 'src/app/user/subscribe/subscribe.component';
 
 @Injectable({
   providedIn: 'any'

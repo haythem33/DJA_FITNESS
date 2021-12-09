@@ -1,0 +1,24 @@
+<div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <header>
+        <a href="#">Djay Fitness</a>
+      </header>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a [routerLink]="['./courses']" class="nav-link">
+            COURSES
+          </a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['./products']" class="nav-link">
+             PRODUCTS
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Content -->
+    <div id="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

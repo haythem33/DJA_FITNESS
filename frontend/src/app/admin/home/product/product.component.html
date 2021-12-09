@@ -1,0 +1,33 @@
+<div class="text-center mb-3">
+    <button (click)="add()" class="name noselect">Add Product</button>
+  </div>
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">product name</th>
+          <th scope="col">quantity</th>
+          <th scope="col">price</th>
+          <th>OPERATION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of allProducts">
+          <th scope="row">{{c.productName}}</th>
+          <td>{{c.quantity}}</td>
+          <td>{{c.price}}</td>
+          <td>
+            <mat-chip-list layout="column" layout-align="center" aria-label="Fish selection">
+              <mat-chip (click)="update(c)" color="primary" selected>
+                UPDATE
+                <mat-icon matChipRemove>update</mat-icon>
+              </mat-chip>
+              <mat-chip (click)="delete(c)" color="warn" selected>
+                DELETE
+                <mat-icon matChipRemove>delete_sweep</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  

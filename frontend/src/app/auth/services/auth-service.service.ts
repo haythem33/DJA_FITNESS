@@ -6,7 +6,6 @@ import jwt_decode from 'jwt-decode';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 
-import { Subscription } from 'rxjs';
 @Injectable({
   providedIn: 'any'
 })

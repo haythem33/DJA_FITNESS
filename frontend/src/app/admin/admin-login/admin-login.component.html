@@ -1,0 +1,23 @@
+<div class="myBody">
+  <div class="grid align__item">
+    <div class="register">
+      <img src="./../../../assets/img/djay.png" class="site__logo"/>
+
+      <h2>Admin Login</h2>
+
+      <form #admin="ngForm" action="" method="post" class="form">
+        <div class="form__field">
+          <input name="username" type="email" placeholder="enter username" ngModel required/>
+        </div>
+
+        <div class="form__field">
+          <input name="password" type="password" placeholder="••••••••••••" ngModel required/>
+        </div>
+
+        <div class="form__field">
+          <input (click)="login(admin)" [disabled]="admin.invalid" type="submit" value="Sign Up" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

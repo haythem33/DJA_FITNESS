@@ -1,0 +1,41 @@
+<div class="text-center mb-3">
+  <button (click)="add()" class="name noselect">Add Course</button>
+</div>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Coach</th>
+        <th scope="col">course name</th>
+        <th scope="col">price</th>
+        <th scope="col">nombre limite</th>
+        <th scope="col">State</th>
+        <th scope="col">Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of allCourses">
+        <th scope="row">{{c.coach}}</th>
+        <td>{{c.courseName}}</td>
+        <td>{{c.price}}</td>
+        <td>{{c.nbLimite}}</td>
+        <td *ngIf="checkTime(c)"><button class="btn btn-secondary btn-sm" disabled>
+          FINISHED
+        </button></td>
+        <td *ngIf="!checkTime(c)"><button class="btn  btn-success btn-sm" disabled>
+          ACTIVE
+        </button></td>
+        <td>
+          <mat-chip-list layout="column" layout-align="center" aria-label="Fish selection">
+            <mat-chip (click)="update(c)" color="primary" selected>
+              UPDATE
+              <mat-icon matChipRemove>update</mat-icon>
+            </mat-chip>
+            <mat-chip (click)="delete(c)" color="warn" selected>
+              DELETE
+              <mat-icon matChipRemove>delete_sweep</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </td>
+      </tr>
+    </tbody>
+  </table>
